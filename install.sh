@@ -1,6 +1,7 @@
 # If you again do this script, then run this.
-# sudo apt-get purge -y nodejs mysql-client mysql-server mysql-common
-#
+# sudo apt-get purge -y nodejs mysql-client mysql-server mysql-common && 
+# rm -rf ~/npm-global-modules
+# sudo echo PURGE | sudo debconf-communicate mysql-server
 #
 
 sudo apt-get install -y curl
