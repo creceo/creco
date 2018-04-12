@@ -1,8 +1,8 @@
 # If you again do this script, then run this.
-# sudo apt-get purge -y nodejs mysql-client mysql-server mysql-common && 
-# rm -rf ~/npm-global-modules
-# sudo echo PURGE | sudo debconf-communicate mysql-server
-#
+sudo apt-get purge -y nodejs mysql-client mysql-server mysql-common && sudo apt-get autoremove -y && sudo rm -rf /etc/mysql/
+rm -rf ~/npm-global-modules
+sudo echo PURGE | sudo debconf-communicate mysql-server
+sudo rm -rf /var/lib/mysql*
 
 sudo apt-get install -y curl
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
