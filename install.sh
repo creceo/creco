@@ -25,11 +25,11 @@ sudo apt-get install -y mysql-client mysql-server mysql-common
 
 sudo npm install --save express sequelize mysql fs sequelize-cli sequelize-auto
 
-sequelize init:config
+sequelize init:config --force
 
 mysql -u root -p$1< init.sql
 
-sequelize init:models
+sequelize init:models --force
 
 sequelize-auto -o "./project/models" -d free_board -h localhost -u root -p 3306 -x $1 -e mysql
 
