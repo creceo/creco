@@ -1,7 +1,4 @@
 -- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
-CREATE DATABASE portfolio;
-USE portfolio;
--- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
 
 -- user Table Create SQL
 CREATE TABLE user
@@ -155,13 +152,14 @@ ALTER TABLE work_detail ADD CONSTRAINT FK_work_detail_work_idx_work_work_idx FOR
 CREATE TABLE comment
 (
     `comment_idx`       INT            NOT NULL    AUTO_INCREMENT COMMENT '댓글 인덱스', 
+    `p_comment_idx`     INT            NULL        COMMENT '부모 댓글', 
     `comment_contents`  TEXT           NOT NULL    COMMENT '댓글 내용', 
     `comment_name`      VARCHAR(45)    NOT NULL    COMMENT '댓글 이름', 
     `comment_email`     VARCHAR(45)    NOT NULL    COMMENT '댓글 이메일', 
     `post_idx`          INT            NOT NULL    COMMENT '게시글 인덱스', 
     `comment_pw`        VARCHAR(45)    NOT NULL    COMMENT '댓글 비밀번호', 
-    `create_at`         DATETIME       NOT NULL    COMMENT '생성 날짜', 
     `delete_at`         DATETIME       NULL        COMMENT '삭제 날짜', 
+    `create_at`         DATETIME       NOT NULL    COMMENT '생성 날짜', 
     PRIMARY KEY (comment_idx)
 );
 
@@ -169,5 +167,6 @@ ALTER TABLE comment COMMENT '댓글';
 
 ALTER TABLE comment ADD CONSTRAINT FK_comment_post_idx_post_post_idx FOREIGN KEY (post_idx)
  REFERENCES post (post_idx)  ON DELETE RESTRICT ON UPDATE RESTRICT;
+
 
 
