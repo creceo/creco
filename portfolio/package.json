@@ -3,15 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "set DEV=true && concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "deploy": "yarn build && set DEV=false && set PORT=3000 && nodemon ./bin/www",
-    "server": "set PORT=3001 && nodemon ./bin/www",
-    "client": "set PORT=3000 && react-scripts start",
+    "start": "DEV=true concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "deploy": "yarn build && DEV=false PORT=3000 nodemon ./bin/www",
+    "server": "PORT=3001 nodemon ./bin/www",
+    "client": "PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass-dev": "sass --load-path=node_modules --watch src/scss:src/css",
+    "sass-pro": "sass --load-path=node_modules src/scss:src/css"
   },
   "dependencies": {
+    "@material-ui/core": "^3.1.2",
+    "@material/top-app-bar": "^0.39.3",
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
     "ejs": "^2.6.1",
