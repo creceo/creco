@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "DEV=true concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "deploy": "yarn build && DEV=false PORT=3000 nodemon ./bin/www",
     "server": "PORT=3001 nodemon ./bin/www",
@@ -10,10 +11,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+=======
+    "start": "nodemon ./bin/www"
+>>>>>>> f677f2cafe8d5aecb75d39e0a76748124e81e19e
   },
   "proxy": "http://localhost:3001/",
   "homepage": "",
   "dependencies": {
+<<<<<<< HEAD
     "@material-ui/core": "^1.5.0",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
@@ -29,5 +34,13 @@
     "react-scripts": "^1.1.4",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1"
+=======
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+>>>>>>> f677f2cafe8d5aecb75d39e0a76748124e81e19e
   }
 }
