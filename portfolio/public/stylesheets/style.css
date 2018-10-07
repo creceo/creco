@@ -29,5 +29,8 @@ button:focus {
 }
 #main-aside,
 #main-content {
-  top: 64px;
+  top: 55px;
+}
+.mdc-top-app-bar__row {
+  height: 55px;
 }
