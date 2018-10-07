@@ -3,11 +3,6 @@ body {
   margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00b7ff;
-}
-
 .creco-theme,
 .creco-theme-text::after {
   background-color: #000 !important;
@@ -29,5 +24,28 @@ button:focus {
 }
 #main-aside,
 #main-content {
-  top: 64px;
+  top: 55px;
+}
+.mdc-top-app-bar__row {
+  height: 55px;
+}
+.article {
+  margin: 50px 0 0 0;
+  max-width: 900px;
+}
+.article > h1 {
+  margin: 20px 0 20px 0;
+  padding: 0 0 5px 10px;
+  border-left: 30px solid black;
+  border-bottom: 1px solid black;
+}
+.article > div {
+  margin: 50px 0 0 20px;
+  padding: 0 0 0 20px;
+  border-left: 8px solid black;
+}
+.board {
+  margin: 50px 0 0 0;
+  display: grid;
+  max-width: 900px;
 }

@@ -5,36 +5,99 @@
   <title>
     <%= title %>
   </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   <script src='/javascripts/material-components-web.min.js'></script>
   <link rel='stylesheet' href='/stylesheets/material-components-web.min.css' />
-  <link rel='stylesheet' href='//stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdn.rawgit.com/showdownjs/showdown/master/dist/showdown.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-
 </head>
 
 <body>
   <% include common/header %>
   <% include common/aside %>
-  <div id="main-content">
-    <h1>Hello, world!</h1>
+  <div id="main-content" class="container-flex w-100">
+    <div class="row justify-content-center align-items-center">
+      <% if(type==="list"){ %>
+      <div class="board">
+      </div>
+      <% } else if(type==="post") {%>
+      <div class="article d-inline-block ">
+        <h1 id="post-title"></h1>
+        <div id="post-contents"></div>
+      </div>
+      <% } %>
+    </div>
   </div>
 </body>
-<script>
 
-  const drawerEL = document.querySelector('.mdc-drawer');
-  const drawer = mdc.drawer.MDCDrawer.attachTo(drawerEL);
-  const abbbarEL = document.getElementById('app-bar');
-  const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(abbbarEL);
-  topAppBar.setScrollTarget(document.getElementById('main-content'));
-  topAppBar.listen('MDCTopAppBar:nav', () => {
-    drawer.open = !drawer.open;
-  });
-  document.addEventListener('click', function (e) {
-    if (e.target.tagName == "BUTTON" && e.target.attributes['href'] != undefined) {
-      window.location.href = (e.target.attributes['href'].value);
+<% if (type === "list") { %>
+<script>
+  let type = 'list';
+</script>
+<% } else if (type === "post") {%>
+<script>
+  let type = 'post';
+</script>
+<% } %>
+
+<script>
+  (function () {
+    const drawerEL = document.querySelector('.mdc-drawer');
+    const drawer = mdc.drawer.MDCDrawer.attachTo(drawerEL);
+    const abbbarEL = document.getElementById('app-bar');
+    const topAppBar = mdc.topAppBar.MDCTopAppBar.attachTo(abbbarEL);
+    topAppBar.setScrollTarget(document.getElementById('main-content'));
+    topAppBar.listen('MDCTopAppBar:nav', () => {
+      drawer.open = !drawer.open;
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target.tagName == "BUTTON" && e.target.attributes['href'] != undefined) {
+        window.location.href = (e.target.attributes['href'].value);
+      } else if (e.target.className.indexOf("aside") == -1) {
+        drawer.open = false;
+      }
+    });
+    if (type === "list") {
+      fetch('/api/list/post')
+        .then(response => response.text())
+        .then(result => {
+          result = JSON.parse(result);
+          for (let i in result) {
+            let item = document.createElement("div");
+            item.style.display = "inline-block";
+            item.style.width = "100%";
+            item.style.margin = "5px 0px 5px 0px";
+            let title = document.createElement("h4");
+            let date = document.createElement("small");
+            date.style.float = "right";
+            date.innerHTML = result[i].date;
+            title.innerHTML = result[i].name;
+            item.appendChild(title);
+            item.appendChild(date);
+            document.querySelector(".board").appendChild(item);
+            item.addEventListener("click", e => {
+              window.location.href = "/post?name=" + result[i].name;
+            });
+          }
+        });
+    } else if (type === "post") {
+      var converter = new showdown.Converter();
+      var postTitle = window.location.search.substr(6);
+
+      fetch('https://raw.githubusercontent.com/CreatiCoding/KOREAWIKI/master/' + postTitle)
+        .then(response => response.text())
+        .then(result => {
+          let subject = decodeURIComponent(postTitle);
+          document.querySelector("#post-title").innerHTML = subject.substring(0, subject.length - 3);
+          document.querySelector("#post-contents").innerHTML = (
+            converter.makeHtml(result)
+          );
+        });
     }
-  });
+
+  })();
 </script>
 
 </html>
