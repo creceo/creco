@@ -1,0 +1,26 @@
+<aside id="main-aside" class="mdc-drawer mdc-drawer--dismissible">
+    <%
+        const drawer_data = [{
+          icon: "inbox", text: "Inbox" 
+        }, {
+          icon: "send",
+          text: "Outgoing"
+        }, {
+          icon: "drafts",
+          text: "Drafts"
+        }];
+        %>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <% for(var i=0; i < drawer_data.length; i++) { %>
+            <a class="creco-theme-text mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
+                <i class="creco-theme-text material-icons mdc-list-item__graphic" aria-hidden="true">
+                    <%= drawer_data[i].icon %></i>
+                </i>
+                <span class="creco-theme-text mdc-list-item__text">
+                    <%= drawer_data[i].text %></span>
+            </a>
+            <% } %>
+        </nav>
+    </div>
+</aside>

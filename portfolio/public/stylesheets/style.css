@@ -1,0 +1,33 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.creco-theme,
+.creco-theme-text::after {
+  background-color: #000 !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+.creco-theme-text,
+.creco-theme-text::before,
+.creco-theme-text:active {
+  background-color: #fff !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+button:focus {
+  outline: none;
+}
+#main-content {
+  position: absolute;
+}
+#main-aside,
+#main-content {
+  top: 64px;
+}
