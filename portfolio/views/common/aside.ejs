@@ -1,23 +1,24 @@
-<aside id="main-aside" class="mdc-drawer mdc-drawer--dismissible">
+<aside id="main-aside" class="aside mdc-drawer mdc-drawer--dismissible position-fixed">
     <%
         const drawer_data = [{
-          icon: "inbox", text: "Inbox" 
+            icon: "contacts",
+            text: "About Me"
         }, {
-          icon: "send",
-          text: "Outgoing"
+          icon: "view_list", 
+          text: "Post" 
         }, {
-          icon: "drafts",
-          text: "Drafts"
+          icon: "format_list_numbered",
+          text: "License"
         }];
         %>
-    <div class="mdc-drawer__content">
-        <nav class="mdc-list">
+    <div class="aside mdc-drawer__content">
+        <nav class="aside mdc-list">
             <% for(var i=0; i < drawer_data.length; i++) { %>
-            <a class="creco-theme-text mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
-                <i class="creco-theme-text material-icons mdc-list-item__graphic" aria-hidden="true">
+            <a class="aside creco-theme-text mdc-list-item mdc-list-item--activated" href="#" aria-selected="true">
+                <i class="aside creco-theme-text material-icons mdc-list-item__graphic" aria-hidden="true">
                     <%= drawer_data[i].icon %></i>
                 </i>
-                <span class="creco-theme-text mdc-list-item__text">
+                <span class="aside creco-theme-text mdc-list-item__text">
                     <%= drawer_data[i].text %></span>
             </a>
             <% } %>
