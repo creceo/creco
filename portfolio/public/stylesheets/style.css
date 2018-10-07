@@ -7,6 +7,27 @@ body {
 a {
   color: #00b7ff;
 }
-.mdc-top-app-bar {
-  top: 0px;
+
+.creco-theme,
+.creco-theme-text::after {
+  background-color: #000 !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+.creco-theme-text,
+.creco-theme-text::before,
+.creco-theme-text:active {
+  background-color: #fff !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+button:focus {
+  outline: none;
+}
+#main-content {
+  position: absolute;
+}
+#main-aside,
+#main-content {
+  top: 64px;
 }
