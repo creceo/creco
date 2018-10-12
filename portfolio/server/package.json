@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "test": "test 4testet"
+    "dev": "PORT=5000 yarn start",
+    "dep": "PORT=8080 yarn start",
+    "start": "nodemon ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
