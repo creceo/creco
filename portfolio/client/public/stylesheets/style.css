@@ -1,0 +1,53 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.creco-theme,
+.creco-theme-text::after {
+  background-color: #000 !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+.creco-theme-text,
+.creco-theme-text::before,
+.creco-theme-text:active {
+  background-color: #fff !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+button:focus {
+  outline: none;
+}
+#main-content {
+  position: absolute;
+}
+#main-aside,
+#main-content {
+  top: 55px;
+}
+.mdc-top-app-bar__row {
+  height: 55px;
+}
+.article {
+  margin: 50px 0 0 0;
+  max-width: 900px;
+  min-width: 900px;
+}
+.article > h1 {
+  margin: 20px 0 20px 0;
+  padding: 0 0 5px 10px;
+  border-left: 30px solid black;
+  border-bottom: 1px solid black;
+}
+.article > div {
+  margin: 50px 0 0 20px;
+  padding: 0 0 0 20px;
+  border-left: 8px solid black;
+}
+.board {
+  margin: 50px 0 0 0;
+  display: grid;
+  max-width: 900px;
+  min-width: 900px;
+}
