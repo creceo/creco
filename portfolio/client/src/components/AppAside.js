@@ -1,7 +1,6 @@
 import React from "react";
 import "../scss/AppAside.scss";
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 
 // Initial Data for drawer
 const drawer_data = [
@@ -53,13 +52,11 @@ const AppAside = ({ title, email }) => {
         <h6 className="mdc-drawer__subtitle">{email}</h6>
       </div>
       <div className="mdc-drawer__content">
-        <Router>
-          <nav className="mdc-list">
-            {drawer_data.map((e, i) => (
-              <AsideItem {...e} key={i} />
-            ))}
-          </nav>
-        </Router>
+        <nav className="mdc-list">
+          {drawer_data.map((e, i) => (
+            <AsideItem {...e} key={i} />
+          ))}
+        </nav>
       </div>
     </aside>
   );

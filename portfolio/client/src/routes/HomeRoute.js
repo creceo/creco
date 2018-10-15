@@ -1,15 +1,12 @@
 import React from "react";
-//import {Link} from "react-router-dom";
-
-//<Link to="/">
+import "../scss/HomeRoute.scss";
 
 const HomeRoute = ({ match }) => {
-  let contents = {
-    fontSize: "large"
-  };
-
-  //console.log(match.params.toon_info_idx);
-  return <div style={contents}>홈입니다.</div>;
+  return (
+    <div className="home-conetnt">
+      <h1>환영합니다.</h1>
+    </div>
+  );
 };
 
 export default HomeRoute;

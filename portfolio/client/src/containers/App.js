@@ -23,77 +23,22 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <AppAside title={"정 석 호"} email={"creaticoding@gmail.com"} />
-        <div className="mdc-drawer-app-content">
-          <AppBar title={"CreatiCoding"} />
-          <Router>
+      <Router>
+        <div className="App">
+          <AppAside title={"정 석 호"} email={"creaticoding@gmail.com"} />
+          <div className="mdc-drawer-app-content">
+            <AppBar title={"CreatiCoding"} />
             <div id="main-content" className="main-content position-relative">
-              <div>
-                <Link to="/">홈으로</Link>
-                <br />
-                <Link to="/post">게시판</Link>
-                <br />
-                <Link to="/post/test">게시판테스트</Link>
-                <br />
-                <Link to="/about">자세히</Link>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                asd
-              </div>
               <div className="app">
-                <Route exact path="/" component={HomeRoute} />
+                <Route exact path="/home" component={HomeRoute} />
                 <Route exact path="/about" component={AboutRoute} />
                 <Route exact path="/post" component={PostRoute} />
                 <Route exact path="/post/:post_idx" component={PostRoute} />
               </div>
             </div>
-          </Router>
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
