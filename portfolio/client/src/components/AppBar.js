@@ -1,20 +1,22 @@
 import React from "react";
-import "../scss/AppBar.sass";
-import { MDCTopAppBar } from "@material/top-app-bar/index";
-
-// Instantiation
-//const topAppBarElement = document.querySelector(".mdc-top-app-bar");
-//const topAppBar = new MDCTopAppBar(topAppBarElement);
-
-const AppBar = ({ message }) => {
+import "../scss/AppBar.scss";
+import AppBarBtn from "./AppBarBtn";
+const AppBar = ({ title }) => {
   return (
-    <header class="mdc-top-app-bar">
-      <div class="mdc-top-app-bar__row">
-        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-          <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">
-            menu
-          </a>
-          <span class="mdc-top-app-bar__title">Title</span>
+    <header id="appbar" className="mdc-top-app-bar mdc-top-app-bar--fixed">
+      <div className="mdc-top-app-bar__row">
+        <section className="creco-theme mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <AppBarBtn name={"menu"} />
+          <AppBarBtn name={"home"} href={"/"} />
+          <span className="mdc-top-app-bar__title">{title}</span>
+        </section>
+        <section className="creco-theme mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+          <AppBarBtn name={"file_download"} ariaLabel={"Download Resume."} />
+          <AppBarBtn
+            name={"account_circle"}
+            href={"https://github.com/creaticoding"}
+            ariaLabel={"Go to github profile."}
+          />
         </section>
       </div>
     </header>
@@ -22,16 +24,3 @@ const AppBar = ({ message }) => {
 };
 
 export default AppBar;
-
-/*
-
-<header class="mdc-top-app-bar">
-  <div class="mdc-top-app-bar__row">
-    <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-      <a href="#" class="material-icons mdc-top-app-bar__navigation-icon">menu</a>
-      <span class="mdc-top-app-bar__title">Title</span>
-    </section>
-  </div>
-</header>
-
-*/
