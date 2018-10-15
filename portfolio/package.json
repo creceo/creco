@@ -2,7 +2,7 @@
   "name": "creaticoding",
   "version": "1.0.0",
   "private": true,
-  "description": "test for deploy",
+  "description": "test for deploy2",
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"cd client && yarn dev\" \"cd server && yarn dev\"",
     "dep": "cd ./client && yarn dep && cd ../server && yarn dep",
