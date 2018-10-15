@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"cd client && yarn dev\" \"cd server && yarn dev\"",
-    "dep": "cd client && yarn dep && cd ../server && yarn dep",
+    "dep": "cd ./client && yarn dep && cd ../server && yarn dep",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "creaticoding",

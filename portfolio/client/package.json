@@ -17,8 +17,8 @@
     "redux-actions": "^2.6.1"
   },
   "scripts": {
-    "dev": "make && PORT=3000 yarn start",
-    "dep": "yarn build && mv ./build ../server/build",
+    "dev": "make dev&& PORT=3000 yarn start",
+    "dep": "make dep&& yarn build && rm -rf ../server/build && mv ./build ../server/build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
