@@ -1,0 +1,7 @@
+@import "variables";
+
+.app-bar-btn-link,
+.app-bar-btn-link:hover {
+  color: $mdc-theme-on-secondary;
+  text-decoration: none;
+}
