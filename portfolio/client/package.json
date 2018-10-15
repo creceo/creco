@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material/drawer": "^0.40.1",
+    "@material/elevation": "^0.40.1",
     "@material/top-app-bar": "^0.40.1",
     "material-components-web": "^0.40.1",
     "node-sass": "^4.9.3",
