@@ -3,11 +3,9 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import HomeRoute from "../routes/HomeRoute";
 import AboutRoute from "../routes/AboutRoute";
 import PostRoute from "../routes/PostRoute";
-import logo from "../images/logo.svg";
 import "../scss/App.scss";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import AppTitle from "../components/AppTitle";
 import AppBar from "../components/AppBar";
 import AppAside from "../components/AppAside";
 import { Link } from "react-router-dom";
@@ -16,12 +14,11 @@ import { MDCDrawer } from "@material/drawer";
 
 class App extends Component {
   componentDidMount() {
-    const test = new MDCTopAppBar(document.getElementById("appbar"));
-    const test2 = new MDCDrawer(document.getElementById("main-aside"));
-    console.log(test, test2);
-    test.setScrollTarget(document.getElementById("main-content"));
-    test.listen("MDCTopAppBar:nav", () => {
-      test2.open = !test2.open;
+    const mdcTopAppBar = new MDCTopAppBar(document.getElementById("appbar"));
+    const mdcDrawer = new MDCDrawer(document.getElementById("main-aside"));
+    mdcTopAppBar.setScrollTarget(document.getElementById("main-content"));
+    mdcTopAppBar.listen("MDCTopAppBar:nav", () => {
+      mdcDrawer.open = !mdcDrawer.open;
     });
   }
   ㄴ;
