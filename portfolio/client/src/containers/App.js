@@ -21,7 +21,6 @@ class App extends Component {
       mdcDrawer.open = !mdcDrawer.open;
     });
   }
-  ㄴ;
   render() {
     return (
       <div className="App">
