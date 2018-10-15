@@ -1,0 +1,55 @@
+@import "variables";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+.mdc-drawer {
+  top: 0px;
+  @include mdc-drawer-border-color(
+    $mdc-theme-primary
+  ); //Sets border color of mdc-drawer surface.
+  @include mdc-drawer-divider-color(
+    $mdc-theme-on-secondary
+  ); //Sets divider color found between list groups.
+  @include mdc-drawer-fill-color-accessible(
+    $mdc-theme-on-secondary
+  ); //Sets the fill color to $color, and list item and icon ink colors to an accessible color relative to $color.
+  @include mdc-drawer-surface-fill-color(
+    $mdc-theme-secondary
+  ); //Sets the background color of mdc-drawer.
+  @include mdc-drawer-title-ink-color(
+    $mdc-theme-on-secondary
+  ); //Sets the ink color of mdc-drawer__title.
+  @include mdc-drawer-subtitle-ink-color(
+    $mdc-theme-on-secondary
+  ); //Sets drawer subtitle and list subheader ink color.
+  @include mdc-drawer-item-icon-ink-color(
+    $mdc-theme-on-secondary
+  ); //Sets drawer list item graphic icon ink color.
+  @include mdc-drawer-item-text-ink-color(
+    $mdc-theme-on-secondary
+  ); //Sets drawer list item text ink color.
+  @include mdc-drawer-item-activated-icon-ink-color(
+    $mdc-theme-on-secondary
+  ); //Sets activated drawer list item icon ink color.
+  @include mdc-drawer-item-activated-text-ink-color($mdc-theme-primary);
+}
+
+// Note: these styles do not account for any paddings/margins that you may need.
+
+// body {
+//   display: flex;
+//   height: 100vh;
+// }
+
+// .mdc-drawer-app-content {
+//   flex: auto;
+//   overflow: auto;
+// }
+
+// .main-content {
+//   overflow: auto;
+//   height: 100%;
+// }
+
+// .app-bar {
+//   position: absolute;
+// }
