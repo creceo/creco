@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import HomeRoute from "../routes/HomeRoute";
 import AboutRoute from "../routes/AboutRoute";
 import PostRoute from "../routes/PostRoute";
+import Filter from "./Filter";
 import "../scss/App.scss";
 import { connect } from "react-redux";
 import * as actions from "../actions";
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <BrowserRouter basename={base}>
         <div className="App">
+          <Filter />
           <AppAside title={"정 석 호"} email={"creaticoding@gmail.com"} />
           <div className="mdc-drawer-app-content">
             <AppBar title={"CreatiCoding"} />
