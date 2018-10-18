@@ -21,7 +21,7 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
+      <BrowserRouter basename={base}>
         <div className="App">
           <AppAside title={"정 석 호"} email={"creaticoding@gmail.com"} />
           <div className="mdc-drawer-app-content">
@@ -36,7 +36,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
