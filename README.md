@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-![image](https://user-images.githubusercontent.com/33514304/46946510-ea645480-d0b2-11e8-9616-93a84d4e732d.png)
+![image](https://user-images.githubusercontent.com/33514304/47150974-5c3ad900-d313-11e8-9615-6bad29c2dab6.png)
 
 ### 포트폴리오 및 기술블로그 프로젝트입니다.
 
