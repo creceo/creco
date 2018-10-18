@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import HomeRoute from "../routes/HomeRoute";
 import AboutRoute from "../routes/AboutRoute";
 import PostRoute from "../routes/PostRoute";
+import Filter from "./Filter";
 import "../scss/App.scss";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 import AppBar from "../components/AppBar";
 import AppAside from "../components/AppAside";
-import { Link } from "react-router-dom";
 import { MDCTopAppBar } from "@material/top-app-bar";
 import { MDCDrawer } from "@material/drawer";
-
 class App extends Component {
   componentDidMount() {
     const mdcTopAppBar = new MDCTopAppBar(document.getElementById("appbar"));
@@ -22,9 +21,11 @@ class App extends Component {
     });
   }
   render() {
+    const base = "/web";
     return (
-      <Router>
+      <BrowserRouter basename={base}>
         <div className="App">
+          <Filter />
           <AppAside title={"정 석 호"} email={"creaticoding@gmail.com"} />
           <div className="mdc-drawer-app-content">
             <AppBar title={"CreatiCoding"} />
@@ -38,7 +39,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
