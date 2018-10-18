@@ -10,7 +10,7 @@ router.get("/post", function(req, res, next) {
   res.render("index", { title: "CreatiCoding", type: "post" });
 });
 router.get("/health", function(req, res, next) {
-  res.send(true);
+  res.json({ result: true });
 });
 router.get("/api/list/post", (req, res, next) => {
   // https://api.github.com/repos/creaticoding/KOREAWIKI/contents/
