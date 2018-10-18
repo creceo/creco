@@ -19,6 +19,13 @@ const LinkOrA = ({ name, path }) => {
     );
   }
 };
+ */
+class AppBarBtn extends Component {
+  render() {
+    let name = this.props.name;
+    let path = this.props.path;
+    let label = this.props.ariaLabel;
+
 
 const AppBarBtn = ({ name, path, ariaLabel }) => {
   return (
