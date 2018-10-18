@@ -16,7 +16,7 @@ class Filter extends Component {
   }
 
   render() {
-    return <div />;
+    return null;
   }
 }
 
