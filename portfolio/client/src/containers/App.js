@@ -20,6 +20,7 @@ class App extends Component {
     });
   }
   render() {
+    const base = "/web";
     return (
       <BrowserRouter basename={base}>
         <div className="App">
