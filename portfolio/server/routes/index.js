@@ -4,11 +4,14 @@ var https = require("https");
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  res.render("index", { title: "CreatiCoding", type: "list" });
+  if (process.env.mode === "development") res.redirect(process.env.client);
+  else res.render(__dirname + "/../build/index.html");
 });
-router.get("/post", function(req, res, next) {
-  res.render("index", { title: "CreatiCoding", type: "post" });
+router.get("/web/*", function(req, res, next) {
+  if (process.env.mode === "development") res.redirect(process.env.client);
+  else res.render(__dirname + "/../build/index.html");
 });
+
 router.get("/health", function(req, res, next) {
   res.json({ result: true });
 });
