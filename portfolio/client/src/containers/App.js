@@ -8,10 +8,8 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import AppBar from "../components/AppBar";
 import AppAside from "../components/AppAside";
-import { Link } from "react-router-dom";
 import { MDCTopAppBar } from "@material/top-app-bar";
 import { MDCDrawer } from "@material/drawer";
-
 class App extends Component {
   componentDidMount() {
     const mdcTopAppBar = new MDCTopAppBar(document.getElementById("appbar"));
