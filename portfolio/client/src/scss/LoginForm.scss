@@ -1,0 +1,40 @@
+@import "./variables";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+@import "@material/ripple/mdc-ripple";
+//$secondary-color
+.login-logo {
+  height: 30%;
+  width: 100%;
+  font-size: 70px;
+  font-family: helvetica;
+  background: $secondary-color;
+  border-radius: 25px 25px 0 0;
+  border: $secondary-color solid 1px;
+  color: $text-on-secondary;
+  font-weight: bold;
+}
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+}
+
+.mdc-text-field.password,
+.mdc-text-field.username {
+  width: 100%;
+}
+
+.button-container {
+  padding: 0 50px 0 50px;
+}
+.mdc-button.cancel {
+  float: left;
+}
+.mdc-button.login {
+  float: right;
+}

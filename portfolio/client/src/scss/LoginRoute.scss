@@ -1,0 +1,19 @@
+@import "variables";
+
+.login-container {
+  height: calc(#{$std-height} - #{$app-bar-height});
+  text-align: center;
+  margin: 0 auto;
+}
+.login-form-box {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  border-radius: 25px;
+  border: #5d4037 solid 1px;
+  //background: $primary-color;
+}

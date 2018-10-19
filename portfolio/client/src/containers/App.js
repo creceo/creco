@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import HomeRoute from "../routes/HomeRoute";
 import AboutRoute from "../routes/AboutRoute";
 import PostRoute from "../routes/PostRoute";
+import LoginRoute from "../routes/LoginRoute";
 import Filter from "./Filter";
 import "../scss/App.scss";
 import { connect } from "react-redux";
@@ -30,11 +31,12 @@ class App extends Component {
           <div className="mdc-drawer-app-content">
             <AppBar title={"CreatiCoding"} />
             <div id="main-content" className="main-content position-relative">
-              <div className="app">
+              <div className="main-content-center">
                 <Route exact path="/home" component={HomeRoute} />
                 <Route exact path="/about" component={AboutRoute} />
                 <Route exact path="/post" component={PostRoute} />
                 <Route exact path="/post/:post_idx" component={PostRoute} />
+                <Route exact path="/login" component={LoginRoute} />
               </div>
             </div>
           </div>
