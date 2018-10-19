@@ -1,14 +1,8 @@
 import React from "react";
+import PostList from "../containers/PostList";
 
-const PostRoute = ({match}) => {
-	let contents = {
-		fontSize : "large"
-	};
-	return ( 
-		<div style={contents}>
-			Welcome to post page({match.params.post_idx})!!
-		</div>
-	);
+const PostRoute = ({ match }) => {
+  return <PostList />;
 };
 
 export default PostRoute;

@@ -20,7 +20,7 @@ const AppBar = ({ title }) => {
           <AppBarBtn name={"file_download"} ariaLabel={"Download Resume."} />
           <AppBarBtn
             name={"account_circle"}
-            path={"https://github.com/creaticoding"}
+            path={"/login"}
             ariaLabel={"Go to github profile."}
           />
         </section>

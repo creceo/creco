@@ -1,13 +1,13 @@
 import { withRouter } from "react-router-dom";
 
-import React, { Component } from "react";
+import { Component } from "react";
 class Filter extends Component {
   constructor(props) {
     super(props);
     window.component = this;
     let path = window.location.pathname;
-    if (path === "/") {
-      this.props.history.push("/");
+    if (path === "/" || path === "/web" || path === "/web/") {
+      this.props.history.push("/home");
     } else if (path.substr(0, 4) !== "/web") {
       console.log("error page");
     } else if (path !== this.props.base) {
@@ -16,7 +16,7 @@ class Filter extends Component {
   }
 
   render() {
-    return <div />;
+    return null;
   }
 }
 

@@ -3,9 +3,13 @@ import "../scss/HomeRoute.scss";
 
 const getHealth = () => {
   return new Promise(resolve => {
-    fetch("/health").then(r => {
-      console.log(r.text());
-    });
+    fetch("/health")
+      .then(r => {
+        return r.text();
+      })
+      .then(r => {
+        console.log(JSON.parse(r));
+      });
   });
 };
 const HomeRoute = ({ match }) => {

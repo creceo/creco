@@ -1,4 +1,9 @@
 @import "variables";
+.main-content-center {
+  max-width: $std-width;
+  min-width: $std-width;
+  margin: 0 auto;
+}
 .main-content {
   top: $app-bar-height;
 }
