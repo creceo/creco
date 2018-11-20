@@ -1,6 +1,6 @@
 all:
 bk:
-	mv .env .env.bk
+	-mv .env .env.bk
 dev: bk
 	cp .env.development .env
 dep:
