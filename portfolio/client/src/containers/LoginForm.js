@@ -11,7 +11,7 @@ class LoginForm extends Component {
     return (
       <div>
         <div className="login-logo">CreatiCoding</div>
-        <form className="login-form" action="home.html">
+        <form className="login-form" action="/api/login" method="post">
           <br />
           <div className="mdc-text-field username">
             <input
@@ -54,7 +54,10 @@ class LoginForm extends Component {
             >
               Cancel
             </button>
-            <button className="mdc-button mdc-button--raised login">
+            <button
+              type="submit"
+              className="mdc-button mdc-button--raised login"
+            >
               Login
             </button>
           </div>

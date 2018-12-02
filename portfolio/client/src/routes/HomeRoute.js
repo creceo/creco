@@ -9,6 +9,7 @@ const getHealth = () => {
       })
       .then(r => {
         console.log(JSON.parse(r));
+        resolve(true);
       });
   });
 };
